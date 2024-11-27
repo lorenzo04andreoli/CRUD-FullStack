@@ -1,0 +1,133 @@
+/* Fontes e Reset */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Contêiner principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Move o conteúdo para a direita */
+    gap: 20px;
+}
+
+/* Imagem */
+.imageSection {
+    flex: 1;
+}
+
+.imageSection img {
+    max-width: 70%;
+    height: auto;
+}
+
+/* Formulário e título */
+.formSection {
+    flex: 1;
+    max-width: 750px;
+    background: #fff;
+    padding: 175px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Campo de senha com ícone */
+.passwordWrapper {
+    position: relative;
+}
+
+.passwordWrapper i {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.passwordWrapper i:hover {
+    color: #000000;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background: #2a2a2a;
+}
+
+/* Redirecionamento */
+.redirect {
+    margin-top: 16px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.redirect a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.redirect a:hover {
+    text-decoration: underline;
+}

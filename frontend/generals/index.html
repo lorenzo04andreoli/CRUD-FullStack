@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Administrativo</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Painel Administrativo</h2>
+            <nav>
+                <ul>
+                    <li><a href="../customers/index.html">Clientes</a></li>
+                    <li><a href="../products/index.html">Produtos</a></li>
+                    <li><a href="../orders/index.html">Pedidos</a></li>
+                    <li><a href="#" id="logout">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <h1>Bem-vindo ao Painel </h1>
+            <p>Aqui você pode gerenciar as seções de clientes, produtos e pedidos.</p>
+        </main>
+    </div>
+    <script>
+        // Logout
+        document.getElementById('logout').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const response = await fetch('../../service/auth/logout.php');
+            const result = await response.json();
+            alert(result.message);
+            window.location.href = '../login/index.html';
+        });
+    </script>
+</body>
+</html>
+
+</body>
+</html>

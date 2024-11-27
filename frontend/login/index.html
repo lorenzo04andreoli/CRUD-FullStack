@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="imageSection">
+        <div class="loginImage">
+            <img src="../assets/images/20602917_6333185.svg" alt="Imagem Login">
+        </div>
+    </section>
+    
+    <section class="formSection">
+        <h1>Acesse sua conta</h1>
+
+        <br>
+
+        <div class="form">
+            <form id="loginForm">
+                <label for="email">E-mail: </label>
+                <input type="email" name="email" id="email" placeholder="E-mail">
+                
+                <label for="password">Senha</label>
+                <div class="passwordWrapper">    
+                    <input type="password" name="password" id="password" placeholder="Senha">
+                    <i class="fas fa-eye togglePassword" id="togglePassword"></i>
+                </div> 
+
+                <button type="submit">Entrar</button>
+            </form>
+
+            <p class="redirect">
+                Não tem uma conta? <a href="../register/index.html">Cadastre-se</a>
+            </p>
+
+        </div>
+    
+        <script src="script.js"></script>
+
+    </section>
+
+</body>
+</html>

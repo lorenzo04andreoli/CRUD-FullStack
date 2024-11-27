@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <title>Cadastro</title>
+</head>
+<body>
+    
+    <section class="imageSection">
+        <div class="registerImage">
+            <img src="../assets/images/6183517_3071354.svg" alt="Imagem de Cadastro">
+        </div>
+    </section>
+
+    <section class="formSection">
+        <h1>Crie a sua conta</h1>
+
+        <br>
+
+        <div class="form">
+            <form id="registerForm">
+                <label for="username">Nome completo</label>
+                <input type="text" name="username" id="username" placeholder="Nome completo">
+
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="example@gmail.com">
+
+                <label for="password">Senha</label>
+                <div class="passwordWrapper">    
+                    <input type="password" name="password" id="password" placeholder="Senha">
+                    <i class="fas fa-eye togglePassword" id="togglePassword"></i>
+                </div>   
+
+                <label for="passwordConfirm">Confirmar senha</label>
+                <div class=" passwordWrapper">
+                    <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder=" Confirmar senha">
+                    <i class="fas fa-eye togglePassword" id="togglePasswordConfirm"></i>
+                </div>
+
+                <button type="submit">Registrar</button>
+            </form>
+
+            <p class="redirect">
+                Já tem uma conta? <a href="../login/index.html">Faça login</a>
+            </p>
+
+        </div>
+
+        <script src="script.js"></script>
+
+    </section>
+
+</body>
+</html>
