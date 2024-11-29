@@ -1,1 +1,45 @@
-Teste
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../customers/style.css">
+    <title>Clientes</title>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Painel Administrativo</h2>
+            <nav>
+                <ul>
+                    <li><a href="../customers/index.html" class="active">Clientes</a></li>
+                    <li><a href="../products/index.html">Produtos</a></li>
+                    <li><a href="../orders/index.html">Pedidos</a></li>
+                    <li><a href="../login/index.html" id="logout">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main Content -->
+        <main class="content">
+            <h1>Clientes</h1>
+            <button id="addCustomerBtn">Adicionar Cliente</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="customersTable">
+                    <!-- Dados carregados dinamicamente -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

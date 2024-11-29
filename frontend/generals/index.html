@@ -36,16 +36,7 @@
             <p>Aqui você pode gerenciar as seções de clientes, produtos e pedidos.</p>
         </main>
     </div>
-    <script>
-        // Logout
-        document.getElementById('logout').addEventListener('click', async (e) => {
-            e.preventDefault();
-            const response = await fetch('../../service/auth/logout.php');
-            const result = await response.json();
-            alert(result.message);
-            window.location.href = '../login/index.html';
-        });
-    </script>
+    <script src="../generals/script.js"></script>
 </body>
 </html>
 

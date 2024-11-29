@@ -42,3 +42,4 @@ try {
     http_response_code(500); // Resposta HTTP para erro do servidor
     echo json_encode(['message' => 'Erro ao cadastrar: ' . $e->getMessage(), 'success' => false]);
 }
+?>
