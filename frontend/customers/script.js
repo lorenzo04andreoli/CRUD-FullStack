@@ -35,7 +35,7 @@ async function fetchCustomers(){
 // Adicionar cliente
 
 async function addCustomer(customer){
-    const response = await fetch('../../service/customers/addCustomer.php',{
+    const response = await fetch('../../service/customers/addCustomers.php',{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(customer)
@@ -50,7 +50,7 @@ function editCustomer(id){
     const name = prompt('Novo nome do cliente:');
     const email = prompt('Novo email do cliente:');
     if  ( name && email ){
-        fetch('../../customers/editCustomer.php', {
+        fetch('../../service/customers/editCustomers.php', {
             method:'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({id, name, email})
@@ -62,10 +62,10 @@ function editCustomer(id){
 //Excluir cliente
 function deleteCustomer(id){
     if (confirm('Tem certeza que deseja excluir este cliente?')){
-        fetch('../../service/customers/deleteCustomer.php',{
+        fetch('../../service/customers/deleteCustomers.php',{
             method:'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({id})            
-        }),then(()=> fetchCustomers());
+        }).then(()=> fetchCustomers());
     }
 }

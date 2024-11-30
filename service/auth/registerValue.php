@@ -8,6 +8,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+session_start();
+
 // Lê o JSON enviado pela requisição
 $data = json_decode(file_get_contents('php://input'), true);
 
@@ -34,6 +36,7 @@ try {
     $stmt->bindParam(':password', $hashed_password);
     $stmt->execute();
 
+    $_SESSION['username'] = $username;
     // Retorna sucesso
     http_response_code(200); // Resposta HTTP para sucesso
     echo json_encode(['message' => 'Usuário cadastrado com sucesso!', 'success' => true]);
