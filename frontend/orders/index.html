@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../products/style.css">
+    <link rel="stylesheet" href="../orders/style.css">
     <title>Pedidos</title>
 </head>
 <body>
@@ -13,36 +13,34 @@
             <h2>Painel Administrativo</h2>
             <nav>
                 <ul>
-                    <li><a href="../customers/index.html" class="active">Clientes</a></li>
+                    <li><a href="../customers/index.html">Clientes</a></li>
                     <li><a href="../products/index.html">Produtos</a></li>
-                    <li><a href="../orders/index.html">Pedidos</a></li>
+                    <li><a href="../orders/index.html" class="active">Pedidos</a></li>
                     <li><a href="../login/index.html" id="logout">Sair</a></li>
                 </ul>
             </nav>
         </aside>
         <!-- Main Content -->
         <main class="content">
-            <h1>Produtos</h1>
-            <button id="addProductsBtn">Adicionar Pedidos</button>
+            <h1>Pedidos</h1>
+            <button id="addOrderBtn">Adicionar Pedido</button>
             <table>
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
-                        <th>Descrição</th>
-                        <th>Preço</th>
-                        <th>Estoque</th>
+                        <th>Cliente</th>
+                        <th>Data</th>
+                        <th>Status</th>
                         <th>Ações</th>
-
                     </tr>
                 </thead>
-                <tbody id="productsTable">
+                <tbody id="ordersTable">
                     <!-- Dados carregados dinamicamente -->
                 </tbody>
             </table>
         </main>
     </div>
 
-    <script src="../products/script.js"></script>
+    <script src="../orders/script.js"></script>
 </body>
 </html>

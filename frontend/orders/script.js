@@ -1,83 +1,59 @@
-document.addEventListener('DOMContentLoaded', () =>{
+document.addEventListener('DOMContentLoaded', () => {
+    // Carregar pedidos
+    fetchOrders();
 
-    //Carregar produtos
-    fetchProducts();
+    // Adicionar pedido
+    document.getElementById('addOrderBtn').addEventListener('click', async () => {
+        const customerId = prompt('ID do cliente:');
+        const productId = prompt('ID do produto:');
+        const quantity = prompt('Quantidade:');
 
-    // Adicionar produto
-    document.getElementById('addProductsBtn').addEventListener('click', () => {
-        const name = prompt('Nome do produto:');
-        const description = prompt('Descrição do produto:');
-        const price = parseFloat(prompt('Preço do produto (use números):'));
-        const stock = parseInt(prompt('Quantidade do produto (use números):'), 10);
-
-        // Verificar se os valores são válidos
-        if (name?.trim() && description?.trim() && !isNaN(price) && !isNaN(stock)) {
-            addProducts({ name: name.trim(), description: description.trim(), price, stock });
-            alert('Produto adicionado com sucesso!');
+        if (customerId && productId && quantity) {
+            await addOrder({ customerId, productId, quantity });
         } else {
             alert('Por favor, preencha todos os campos corretamente.');
         }
     });
 });
 
-//Função para carregar produtos
-
-async function fetchProducts(){
-    const response = await fetch('../../service/products/fetchProducts.php');
-    const products = await response.json();
-    const table = document.getElementById('productsTable');
-    table.innerHTML = products.map(products => ` 
-         <tr>
-            <td>${products.id}</td>
-            <td>${products.name}</td>
-            <td>${products.description}</td>
-            <td>${products.price}</td>
-            <td>${products.stock}</td>
-
+// Função para carregar pedidos
+async function fetchOrders() {
+    const response = await fetch('../../service/orders/fetchOrders.php');
+    const orders = await response.json();
+    const table = document.getElementById('ordersTable');
+    table.innerHTML = orders.map(order => `
+        <tr>
+            <td>${order.id}</td>
+            <td>${order.customer_name}</td>
+            <td>${order.order_date}</td>
+            <td>${order.status}</td>
             <td>
-                <button onclick="editProducts(${products.id})">Editar</button>
-                <button onclick="deleteProducts(${products.id})">Excluir</button>
+                <button onclick="deleteOrder(${order.id})">Excluir</button>
             </td>
         </tr>
     `).join('');
 }
 
-// Adicionar produto
-
-async function addProducts(products){
-    const response = await fetch('../../service/products/addProducts.php',{
+// Função para adicionar pedido
+async function addOrder(order) {
+    const response = await fetch('../../service/orders/addOrders.php', {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(products)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(order)
     });
     const result = await response.json();
     alert(result.message);
-    fetchProducts();
+    fetchOrders();
 }
 
-//Editar produto
-function editProducts(id){
-    const name = prompt('Novo nome do produto:');
-    const description = prompt('Nova descrição do produto:');
-    const price = prompt('Novo preço do produto');
-    const stock = prompt('Nova quantidade de produtos');
-    if (name?.trim() && description?.trim() && !isNaN(price) && !isNaN(stock)){
-        fetch('../../service/products/editProducts.php', {
-            method:'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({id, name, description, price, stock})
-        }).then(()=> fetchProducts());
-    }
-
-}
-
-//Excluir produto
-function deleteProducts(id){
-    if (confirm('Tem certeza que deseja excluir este cliente?')){
-        fetch('../../service/products/deleteProducts.php',{
-            method:'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({id})            
-        }).then(()=> fetchProducts());
+// Função para excluir pedido
+async function deleteOrder(id) {
+    if (confirm('Tem certeza que deseja excluir este pedido?')) {
+        await fetch('../../service/orders/deleteOrders.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id })
+        });
+        fetchOrders();
     }
 }
