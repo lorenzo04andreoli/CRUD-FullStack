@@ -12,4 +12,5 @@ $stmt = $conn->prepare('INSERT INTO products (name, description, price, stock) V
 $stmt->execute(['name' => $name, 'description' => $description, 'price' => $price, 'stock' => $stock]);
 
 echo json_encode(['message'=> 'Produto adicionado com sucesso!']);
+
 ?>

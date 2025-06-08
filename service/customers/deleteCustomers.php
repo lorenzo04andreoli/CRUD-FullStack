@@ -9,4 +9,5 @@ $stmt = $conn ->prepare('DELETE FROM customers WHERE id = :id');
 $stmt->execute(['id'=> $id]);
 
 echo json_encode(['message'=> 'Cliente excluído com sucesso!']);
+
 ?>

@@ -13,4 +13,5 @@ $stmt = $conn->prepare('DELETE FROM orders WHERE id = :id');
 $stmt->execute(['id' => $id]);
 
 echo json_encode(['message' => 'Pedido excluído com sucesso!']);
+
 ?>

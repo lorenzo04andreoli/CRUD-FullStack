@@ -22,4 +22,5 @@ $stmt = $conn->prepare('UPDATE products SET stock = stock - :quantity WHERE id =
 $stmt->execute(['quantity' => $quantity, 'product_id' => $productId]);
 
 echo json_encode(['message' => 'Pedido criado com sucesso!']);
+
 ?>

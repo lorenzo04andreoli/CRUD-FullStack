@@ -10,4 +10,5 @@ $stmt = $conn->prepare('INSERT INTO customers (name, email) VALUES (:name, :emai
 $stmt->execute(['name' => $name, 'email' => $email]);
 
 echo json_encode(['message'=> 'Cliente adicionado com sucesso!']);
+
 ?>

@@ -9,4 +9,5 @@ $stmt = $conn ->prepare('DELETE FROM products WHERE id = :id');
 $stmt->execute(['id'=> $id]);
 
 echo json_encode(['message'=> 'Produto excluído com sucesso!']);
+
 ?>
