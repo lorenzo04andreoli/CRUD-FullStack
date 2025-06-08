@@ -11,7 +11,7 @@ O projeto utiliza PHP e MySQL no backend, com estruturação clara de código, s
 
 ## 🚀 Tecnologias Utilizadas
 
-- **Linguagens:** Java | Python | PHP | JavaScript | SQL  
+- **Linguagens:** PHP | JavaScript | SQL  
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** PHP puro, MySQL  
 - **Outros:** Git
